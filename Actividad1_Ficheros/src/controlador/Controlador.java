@@ -53,7 +53,7 @@ public class Controlador {
 	public void agregarArticulo(File file) {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("A continuación introduzca los datos del nuevo artículo");
+		System.out.println("A continuación introduzca los datos del nuevo artículo1");
 		int id;
 		do {
 			System.out.print("ID: ");
@@ -65,23 +65,23 @@ public class Controlador {
 			}
 		} while (existeArticuloConId(id));
 
-		System.out.println("NOMBRE:");
+		System.out.println("Nombre:");
 		String nombre = sc.nextLine();
 
-		System.out.println("DESCRIPCION:");
+		System.out.println("Descripcion:");
 		String descripcion = sc.nextLine();
 
-		System.out.println("PRECIO:");
+		System.out.println("Precio:");
 		double precio = sc.nextDouble();
 
-		System.out.println("CANTIDAD:");
+		System.out.println("Cantidad:");
 		int cantidad = sc.nextInt();
 		sc.nextLine();
 		
 		
 		Articulo nuevoArticulo = new Articulo(id, nombre, descripcion, id, cantidad);
 		articulos.add(nuevoArticulo);
-		System.out.println("Objeto guardado");
+		System.out.println("Articulo guardado");
 	}
 	//metodo que comprueba si una id ya forma parte de la lista
 		public boolean existeArticuloConId(int id) {
@@ -97,17 +97,17 @@ public class Controlador {
 		Scanner scanner = new Scanner(System.in);
 		
 		if(articulos.isEmpty()) {
-			System.out.println("Todavia no hay ningun articulo guardado");
+			System.out.println("La lista está vacía");
 			return;
 		}
 
-		System.out.print("Ingrese el ID del artículo a borrar: ");
-		int idBorrar = scanner.nextInt();
+		System.out.print("Escriba el ID del artículo que desee borrar ");
+		int borrarId = scanner.nextInt();
 		scanner.nextLine();
 
 		for (Articulo a : articulos) {
 
-			if (a.getId() == idBorrar) {
+			if (a.getId() == borrarId) {
 				System.out.println("Articulo borrado: " + a);
 				articulos.remove(a);
 				return;
@@ -120,7 +120,7 @@ public class Controlador {
 	public void consultarArticuloPorId() {
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("Ingrese el ID del artículo a consultar: ");
+		System.out.print("Escriba el ID del articulo que desee consultar ");
 		int idConsultar = scanner.nextInt();
 		scanner.nextLine();
 
@@ -145,8 +145,8 @@ public class Controlador {
 		}	
 }
 	
-	//metodo que guarda la lista en un ficher9
-		public void guardarColeccionEnFichero() {
+	//metodo que guarda la lista en un fichero
+		public void guardarListaEnFichero() {
 			try (FileOutputStream fos = new FileOutputStream(file); 
 					ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 				oos.writeObject(articulos);
@@ -155,9 +155,4 @@ public class Controlador {
 				e.printStackTrace();
 			}
 		}
-
-	
-	
-	
-
 }

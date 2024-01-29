@@ -64,7 +64,7 @@ public class Main {
 				controladorCSV.exportarCSV(articulos);
 				break;
 			case 6:
-				controlador.guardarColeccionEnFichero();
+				controlador.guardarListaEnFichero();
 				System.out.println("--- FIN ---");
 				return;
 			default:
