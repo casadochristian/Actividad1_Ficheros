@@ -1,24 +1,4 @@
-# Tipicos fichero que debemos ignorar por git para eclipse, maven, spring, etc. 
-# Sacados de:
-# https://gist.github.com/Avinashachu007/58450a38a3a77d7c9923a55023f470f4
-# Tambien se puede consultar la siguiente pagina
-# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
 
-/target/
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-# Mejor comentar esta linea tambien para que se puede abrir los proyectos en eclipse
-# Sin errores
-# .classpath
-.factorypath
-.settings
-.springBeans
-.sts4-cache
-
-
-# Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
 ### Eclipse ###
 
